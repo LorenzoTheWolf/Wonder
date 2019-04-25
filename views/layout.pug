@@ -1,0 +1,23 @@
+doctype html
+html
+    head
+        title #{title}
+        link(rel='stylesheet', href='/css/main.css')
+        link(rel='shortcut icon', href="/images/thought.png", type="image/x-icon")
+        link(href="https://fonts.googleapis.com/css?family=Arizonia|Mr+Dafoe" rel="stylesheet")
+    body
+        main    
+            block header
+                nav.navbar
+                    a(href="/").logo-link
+                        img.logo(src="/images/thought.png" alt="Logo image")
+                        h1.wonder Wonder
+                    .menu
+                        if user
+                            a.link(href="/signout") Sign out
+                            a.link(href="/account") #{user.username}
+                        else
+                            a.link(href="/login") Login
+                            a.link(href="/register") Sign Up
+                        
+            block content

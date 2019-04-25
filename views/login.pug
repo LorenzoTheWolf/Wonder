@@ -1,0 +1,12 @@
+extend layout
+
+block content   
+    form.form(action="/login" method="post")
+        h1.form-title Login into your account
+        label.label(for="Email") Email address
+        input.input(type="email" placeholder="Email address" name="email" required)
+        label.label(for="password") Password        
+        input.input(type="password" placeholder="Password" name="password" required)
+        button.button(type="submit") Log in
+        h6.reg-h Don't have an account? Sign up for free 
+        a.reg-l(href="/register") here
