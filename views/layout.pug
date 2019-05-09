@@ -3,6 +3,7 @@ html
     head
         title #{title}
         link(rel='stylesheet', href='/css/main.css')
+        link(rel="stylesheet", href="/css/question.css")
         link(rel='shortcut icon', href="/images/thought.png", type="image/x-icon")
         link(href="https://fonts.googleapis.com/css?family=Arizonia|Mr+Dafoe" rel="stylesheet")
     body
@@ -14,10 +15,16 @@ html
                         h1.wonder Wonder
                     .menu
                         if user
+                            a.link(href="/create-question") Create a question
                             a.link(href="/signout") Sign out
                             a.link(href="/account") #{user.username}
                         else
                             a.link(href="/login") Login
                             a.link(href="/register") Sign Up
+            block errors
+                if errors
+                    .errors-container
+                        each error in errors
+                            .error-message #{error}
                         
             block content

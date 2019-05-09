@@ -1,3 +1,5 @@
+//http://192.168.20.58:3000/
+
 const express = require('express');
 const bodyParser = require('body-parser');
 const cookieParser = require('cookie-parser');
@@ -14,6 +16,8 @@ mongoose.connection.on('error', function(error){
 });
 
 require('./models/User');
+require('./models/Question');
+require('./models/Answer');
 
 const routes = require('./routes/routes')
 

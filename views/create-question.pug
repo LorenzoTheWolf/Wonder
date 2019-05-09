@@ -1,0 +1,8 @@
+extend layout
+
+block content
+    form.form(action="/create-question" method="post")
+        h1.form-title Create a new question
+        label.label(for="question") Question
+        input.input(type="text" placeholder="What do you want to ask?" name="question" required)
+        button.button(type="submit") Create

@@ -38,7 +38,7 @@ body {
     padding: 15px;
 }
 .navbar .menu .link:hover {
-    color:#976b28;
+    color:#c4882f;
 }
 
 .button {
@@ -126,9 +126,31 @@ body {
     color:#ff9f43;
 }
 
+.reg-l:hover{
+    color:#d1902f;
+}
+
 .logo-link{
     display:flex;
     text-decoration: none;
     color: black;
     align-items: center;
+}
+
+.error-message {
+    border: 1px solid rgb(226, 71, 71);
+    background-color: rgb(243, 199, 199);
+    color: rgb(226, 71, 71);
+    font-weight: bold;
+    border-radius: 5px;
+    max-width: 470px ;
+    height: 50px;
+    text-align: center;
+    margin: 15px auto;
+    padding: 12px;
+}
+
+.question {
+    border: 1px solid #ff9f43;
+    border-radius: 10px;
 }

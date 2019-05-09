@@ -1,3 +1,9 @@
 extends layout
+
 block content
-    h1 hola mundo 2
+    if questions
+        .questions
+            each question in questions
+                a.link(href=`/question/${question.slug}`)
+                    .question 
+                        h1.name #{question.question}

@@ -1,0 +1,20 @@
+extends layout
+
+block content
+      h2.title.title--single
+        a(href=`/question/${question.slug}`) #{question.name}
+    .answers
+      if answers
+        each answer in answer
+            .single-answer 
+                .author #{answer.author.username} (#{answer.author.email})
+                .message #{answer.message}
+    .answer-form
+      if user
+        .create-answer
+          form(method="post", action=`/create-answer/${question._id}`)
+            h2 Write an answer
+            textarea.textarea(name="message" placeholder="Write your answer here" required maxlength="500")
+            button.button(type="submit") Submit
+      else
+        .login-answer You must login in order to provide an answer

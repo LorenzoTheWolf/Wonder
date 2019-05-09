@@ -7,20 +7,20 @@ exports.validateRegister = function(req, res, next) {
 
     const userWithEmail = User.findOne({email:userData.email}).then(function(user){
         if (user) {
-            res.render('register', { title: 'Register', styleFile:'register.css', errors: ['Email is already on use'] })
+            res.render('register', { title: 'Register', styleFile:'main.css', errors: ['Email is already on use'] })
         }
     });
 
     const userWithUsername = User.findOne({username:userData.username}).then(function(user){
         if (user) {
-            res.render('register', { title: 'Register', styleFile:'register.css', errors: ['Username is already on use'] })
+            res.render('register', { title: 'Register', styleFile:'main.css', errors: ['Username is already on use'] })
         }
     });
 
     if(userData.password != userData.confirmPassword){
-        res.render('register', {title:'Register', styleFile:'register.css', errors:["Passwords don't match"] });
+        res.render('register', {title:'Register', styleFile:'main.css', errors:["Passwords don't match"] });
     } else if(userData.password && userData.confirmPassword < 5){
-        res.render('register', {title:'Register', styleFile:'register.css', errors:["Please include more than two characters in the password"] });
+        res.render('register', {title:'Register', styleFile:'main.css', errors:["Please include more than two characters in the password"] });
     }else{
         next();
     }
@@ -68,7 +68,7 @@ exports.login = function(req, res) {
 
     const user = User.findOne({email: userData.email}).then(function(user){
         if (!user){
-            res.render('login',{title:'login', styleFile: 'register.css', errors: ['No user found with this email'] });
+            res.render('login',{title:'login', styleFile: 'main.css', errors: ['No user found with this email'] });
         }
 
         const validPassword = bcrypt.compareSync(userData.password, user.password);
@@ -79,7 +79,7 @@ exports.login = function(req, res) {
             res.redirect('/');
         }
         else{
-            res.render('login',{title:'login', styleFile: 'register.css', errors: ['Wrong password'] });
+            res.render('login',{title:'login', styleFile: 'main.css', errors: ['Wrong password'] });
         }
     });
 };
