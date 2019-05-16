@@ -22,7 +22,8 @@ exports.createQuestion = function(req,res){
     }
     const question= new Question({
         question:questionData.question,
-        slug:questionData.slug
+        slug:questionData.slug,
+        author: req.session.user._id,
     })
         
     question.save().then(function(question){

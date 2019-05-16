@@ -25,7 +25,7 @@ router.get('/account', userController.checkSession, function(req,res){
     res.render('account', {title:'User account'})
 })
 
-router.get('/',questionController.getQuestions ,function(req, res){
+router.get('/', questionController.getQuestions, function(req, res){
     res.render('index', {title: 'Homepage', styleFile:'main.css'})
 })
 
@@ -34,6 +34,10 @@ router.get('/create-question', userController.checkSession, function(req, res){
 });
 
 router.post('/create-question', questionController.createSlug, questionController.createQuestion);
+
+router.get('/question/:slug', answerController.getAnswerWithSlug, questionController.getQuestionsWithSlug, function(req, res){
+    res.render('question', {title:res.locals.question.question, styleFile:'main.css'})
+})
 
 router.post('/create-answer/:question', answerController.createAnswer)
 

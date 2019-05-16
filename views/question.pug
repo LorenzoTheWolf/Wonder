@@ -1,20 +1,21 @@
 extends layout
 
 block content
-      h2.title.title--single
-        a(href=`/question/${question.slug}`) #{question.name}
+    h2.form-title
+      a.link-1(href=`/question/${question.slug}`) #{question.question}
+      h2.link-1 This quesion has #{question.visits} visits
     .answers
       if answers
-        each answer in answer
+        each answer in answers
             .single-answer 
                 .author #{answer.author.username} (#{answer.author.email})
-                .message #{answer.message}
+                .answer #{answer.answer}
     .answer-form
       if user
         .create-answer
           form(method="post", action=`/create-answer/${question._id}`)
             h2 Write an answer
-            textarea.textarea(name="message" placeholder="Write your answer here" required maxlength="500")
+            textarea.textarea(name="answer" placeholder="Write your answer here" required maxlength="500")
             button.button(type="submit") Submit
       else
         .login-answer You must login in order to provide an answer

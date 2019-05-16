@@ -15,6 +15,23 @@ const questionSchema = new Schema({
         type:String, 
         unique:true,
     },
+    visits:{
+        type:Number,
+        default:3,
+    },
+
+    author: {
+        type: mongoose.Schema.ObjectId,
+        ref: 'User',
+        required: 'You must supply a username'
+    },
 })
+function autopopulate(next) {
+    this.populate('author');
+    next();
+}
+
+questionSchema.pre('find', autopopulate);
+questionSchema.pre('findOne', autopopulate);
 
 module.exports=mongoose.model('Question', questionSchema);

@@ -18,6 +18,10 @@ const userSchema = new Schema({
     password:{
         type:String,
         required: 'Please supply a password'
+    },
+    friends:{
+        type: [mongoose.Schema.ObjectId],
+        ref: 'User'
     }
 });
 
