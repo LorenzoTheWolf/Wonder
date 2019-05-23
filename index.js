@@ -18,6 +18,10 @@ mongoose.connection.on('error', function(error){
 require('./models/User');
 require('./models/Question');
 require('./models/Answer');
+require('./models/Chat');
+require('./models/Message');
+
+
 
 const routes = require('./routes/routes')
 

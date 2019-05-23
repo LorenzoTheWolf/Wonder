@@ -17,7 +17,7 @@ const questionSchema = new Schema({
     },
     visits:{
         type:Number,
-        default:3,
+        default:0,
     },
 
     author: {
@@ -33,5 +33,6 @@ function autopopulate(next) {
 
 questionSchema.pre('find', autopopulate);
 questionSchema.pre('findOne', autopopulate);
+
 
 module.exports=mongoose.model('Question', questionSchema);

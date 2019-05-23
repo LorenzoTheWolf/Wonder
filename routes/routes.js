@@ -4,9 +4,15 @@ const router= express.Router()
 const userController=require('../controllers/userController')
 const questionController=require('../controllers/questionController')
 const answerController=require('../controllers/answerController')
+const chatController=require('../controllers/chatController')
+
 
 router.get('/register', function (req,res){
     res.render('register', {title:'Register', styleFile:'main.css'})
+})
+
+router.get('/credits', function (req,res){
+    res.render('credits', {title:'Credits', styleFile:'main.css'})
 })
 
 router.post('/register',userController.validateRegister, userController.registerUser, function(req, res){
@@ -35,10 +41,16 @@ router.get('/create-question', userController.checkSession, function(req, res){
 
 router.post('/create-question', questionController.createSlug, questionController.createQuestion);
 
-router.get('/question/:slug', answerController.getAnswerWithSlug, questionController.getQuestionsWithSlug, function(req, res){
+router.get('/question/:slug', answerController.getAnswerWithSlug, questionController.getQuestionsWithSlug, questionController.updateVisits, function(req, res){
     res.render('question', {title:res.locals.question.question, styleFile:'main.css'})
 })
 
+//router.post('/create-message/:chat', messageController.createMessage)
+
 router.post('/create-answer/:question', answerController.createAnswer)
+
+router.get('/chat',userController.checkSession,chatController.createChat, chatController.getChat, function (req,res){
+    res.render('chat', {title:'Chat', styleFile:'main.css'})
+});
 
 module.exports = router;

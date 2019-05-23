@@ -1,14 +1,17 @@
 extends layout
 
 block content
-    h2.form-title
-      a.link-1(href=`/question/${question.slug}`) #{question.question}
-      h2.link-1 This quesion has #{question.visits} visits
+    h2.form-title1
+      div
+        a.link-1(href=`/question/${question.slug}`) #{question.question}
+      div
+        a.author-username1(href=`/question/${question.slug}`) #{question.author.username}
+      h2.visits This question has #{question.visits} visits
     .answers
       if answers
         each answer in answers
             .single-answer 
-                .author #{answer.author.username} (#{answer.author.email})
+                .author #{answer.author.username} 
                 .answer #{answer.answer}
     .answer-form
       if user

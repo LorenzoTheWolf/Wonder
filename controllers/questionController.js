@@ -33,6 +33,17 @@ exports.createQuestion = function(req,res){
     })
 }
 
+exports.updateVisits = function(req,res,next){
+    const slug = req.params.slug;
+    Question.findOne({slug:slug}).then(function(question){
+        Question.updateOne({slug: question.slug},{visits: question.visits + 1}).then(function(question){
+            if(question){
+                next();
+            }
+        })
+    })
+}
+
 exports.getQuestionsWithSlug=function(req,res,next){
     const slug= req.params.slug;
     Question.findOne({slug: slug}).then(function(question){

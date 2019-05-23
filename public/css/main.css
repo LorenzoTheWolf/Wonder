@@ -17,7 +17,7 @@ body {
     padding: 15px 30px;
     display: flex;
     justify-content: space-between;
-    background-color:#ff9f43;
+    background-image: linear-gradient(#ff9f43, #ffbe82);
     max-height: 80px;
 }
 .navbar .logo {
@@ -153,4 +153,11 @@ body {
 .question {
     border: 1px solid #ff9f43;
     border-radius: 10px;
+}
+.main{
+    min-height: 95vh;
+}
+
+.span{
+    color: orange;
 }

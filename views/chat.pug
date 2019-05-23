@@ -1,0 +1,6 @@
+extends layout
+block content
+    h1 Chat Members
+    each user in chat.users
+     h3 #{user.username}
+

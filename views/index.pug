@@ -1,10 +1,11 @@
 extends layout
 
 block content
+    a.link(href="/chat") Chat mode
     if questions
         .questions
             each question in questions
                 a.link(href=`/question/${question.slug}`)
                     .question 
                         h1.name #{question.question}
-                        h5.author #{question.author}
+                        h5.author-username #{question.author.username}
