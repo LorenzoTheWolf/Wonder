@@ -15,6 +15,7 @@ html
                         h1.wonder Wonder
                     .menu
                         if user
+                            a.link(href="/chat") Chat mode
                             a.link(href="/create-question") Create a question
                             a.link(href="/signout") Sign out
                             a.link(href="/account") #{user.username}

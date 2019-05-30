@@ -13,12 +13,11 @@ body {
     box-sizing: inherit;
 }
 
-.navbar {
-    padding: 15px 30px;
-    display: flex;
+.navbar { 
     justify-content: space-between;
     background-image: linear-gradient(#ff9f43, #ffbe82);
     max-height: 80px;
+    display:flex;
 }
 .navbar .logo {
     height: 60px;
@@ -160,4 +159,58 @@ body {
 
 .span{
     color: orange;
+}
+
+.chat-members{    
+    color:gray;
+    text-align: center;
+    display: flex;
+    justify-content: flex-start;
+    padding: 0 20px;
+}
+.chat-member{
+    font-size:15px;
+    padding: 5px;
+}
+
+.form-title2 {
+    text-shadow: 0px 2px 4px rgba(0,0,0,0.09);
+    font-size: 1.8rem;
+    margin: 0 auto;
+    margin-top:0px;
+    text-align: center;
+    border-bottom-right-radius: 55px;
+    border-bottom-left-radius: 55px;
+    background-image: linear-gradient(#ffbe82, #ffd4ad);
+    max-width: 60%;
+    padding-bottom:20px;
+    font-weight: 450;
+}
+
+.form1{
+    width: 60%;
+    margin: 0 auto;
+    padding: 15px 30px;
+    border-radius: 10px;
+    border: 1px solid rgba(0,0,0,0.09);
+    box-shadow: 0px 3px 6px rgba(0,0,0,0.09);
+    background-color: white;
+    display: flex;
+    justify-content:center;
+    align-items: flex-end;
+}
+
+.button-2{
+    border-radius: 5px;
+    padding: 10px 20px;
+    font-size: 1.1rem;
+    border: none;
+    margin-top: 15px;
+    cursor: pointer;
+    box-shadow: 0px 4px 6px rgba(0,0,0,0.09);
+    background:  #ff9f43;
+    color: rgba(0,0,0,0.7);
+    display: flex;
+    justify-content: center;
+    margin: 0 auto;
 }

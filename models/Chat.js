@@ -14,6 +14,7 @@ const ChatSchema = new Schema({
 
 function autopopulate(next) {
     this.populate('users');
+    this.populate('messages');
     next();
 }
 
