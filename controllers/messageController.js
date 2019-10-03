@@ -14,9 +14,11 @@ exports.createMessage = function(req,res){
         chat: chat,
         sender: req.session.user._id,
     })
-    message.save().then(function(message){
-        if (message){
+    message.save().then(function(chat){
+        if (chat){
             res.redirect('back');
+            console.log(message.text)   
         }
     })
 }         
+

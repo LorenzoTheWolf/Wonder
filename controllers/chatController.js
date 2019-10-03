@@ -1,5 +1,6 @@
 const mongoose = require('mongoose');
 const bcrypt = require('bcrypt');
+const slug=require('slugs')
 const Chat = mongoose.model('Chat');
 
 exports.createChat = function (req, res, next) {

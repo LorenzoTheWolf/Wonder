@@ -9,11 +9,11 @@ const ChatSchema = new Schema({
     messages:[{
         type:mongoose.Schema.ObjectId,
         ref: 'Message'        
-    }]
+    }],
 })
 
 function autopopulate(next) {
-    this.populate('users');
+    this.populate('senders');
     this.populate('messages');
     next();
 }

@@ -166,7 +166,9 @@ body {
     text-align: center;
     display: flex;
     justify-content: flex-start;
-    padding: 0 20px;
+    margin-top: 0px;
+    padding-left: 10px;
+    padding-right: 10px;
 }
 .chat-member{
     font-size:15px;
@@ -179,10 +181,6 @@ body {
     margin: 0 auto;
     margin-top:0px;
     text-align: center;
-    border-bottom-right-radius: 55px;
-    border-bottom-left-radius: 55px;
-    background-image: linear-gradient(#ffbe82, #ffd4ad);
-    max-width: 60%;
     padding-bottom:20px;
     font-weight: 450;
 }

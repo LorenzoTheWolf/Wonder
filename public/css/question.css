@@ -4,10 +4,10 @@
     margin: 0 auto;
     margin-top:0px;
     text-align: center;
-    border-bottom-right-radius: 55px;
-    border-bottom-left-radius: 55px;
+    border-bottom-right-radius: 25px;
+    border-bottom-left-radius: 25px;
     background-image: linear-gradient(#ffbe82, #ffd4ad);
-    max-width: 60%;
+    max-width: 50%;
     padding-top: 20px;
     padding-bottom:6px;
     font-weight: 450;

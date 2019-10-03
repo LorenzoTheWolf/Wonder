@@ -33,7 +33,7 @@ app.use(bodyParser());
 
 app.use(cookieParser());
 
-app.use(
+app.use( 
     session({
         key:'user_sid',
         secret: '123secretstuff',

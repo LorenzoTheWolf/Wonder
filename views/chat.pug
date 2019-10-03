@@ -3,25 +3,24 @@ extends layout
 block content
     h2.form-title1
       div
-        h1.form-title2 Chat Members
-        if chat.users
-                div.chat-members
-                        each user in chat.users
-                                h3.chat-member #{user.username},
+        h1.form-title2 Chat
+          //if chat.users
+            div.chat-members
+              each user in chat.users
+                h3.chat-member #{user.username}
 
     .answers
       if messages
         each message in messages
             .single-answer 
-                .author #{message.sender.username}
-                .answer #{message.text}
+                .text #{message.text}
+                //.sender #{message.sender.username}
     .answer-form
       if user
         .create-answer
-          form(method="post", action=`/send-message/${chat._id}`)
+          form(method="post", action=`/create-message/${chat._id}`)
             h2 Write a message
             textarea.textarea(name="text" placeholder="Write your message here" required maxlength="500")
             button.button(type="submit") Submit
       else
         .login-answer You must login in order to provide a message
-

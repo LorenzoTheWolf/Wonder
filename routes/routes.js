@@ -49,10 +49,10 @@ router.get('/question/:slug', answerController.getAnswerWithSlug, questionContro
 
 router.post('/create-answer/:question', answerController.createAnswer)
 
-router.get('/chat', userController.checkSession,chatController.createChat, chatController.getChat, function (req,res){
+router.get('/chat', userController.checkSession, chatController.createChat, chatController.getChat, function (req,res){
     res.render('chat', {title:'Chat', styleFile:'main.css'})
 });
 
-router.post('/send-message/:chat', messageController.createMessage);
+router.post('/create-message/:chat', messageController.createMessage);
 
 module.exports = router;
