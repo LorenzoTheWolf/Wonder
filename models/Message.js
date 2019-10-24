@@ -15,11 +15,6 @@ const MessageSchema = new Schema({
         type: String,
         required: true
     },
-    chat: {
-        type: mongoose.Schema.ObjectId,
-        ref: 'Chat',
-        required: 'You must supply a chat'
-    }
 });
 
 module.exports = mongoose.model('Message', MessageSchema);

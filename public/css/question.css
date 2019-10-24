@@ -101,9 +101,9 @@ h2 {
     margin-top: 15px;
     padding: 15px 30px;
     border-radius: 5px;
-    border: 1px solid rgba(0, 0, 0, 0.09);
+    border: 1px solid rgba(0, 0, 0, 0.0);
     box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.09);
-    background: white;
+    background-image: linear-gradient(#ffffff, #ffffff);
 }
 
 .single-answer {
@@ -131,4 +131,12 @@ h2 {
 }
 .credits:hover {
     color:#d89126;
-}    
+}
+
+.credit-link {
+    color: #ff9f43;
+    text-decoration: none;
+}
+.credit-link:hover {
+    color:#d89126;
+}

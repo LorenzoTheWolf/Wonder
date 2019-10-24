@@ -21,8 +21,6 @@ require('./models/Answer');
 require('./models/Chat');
 require('./models/Message');
 
-
-
 const routes = require('./routes/routes')
 
 app.set('view engine', 'pug');
