@@ -19,7 +19,7 @@ const AnswerSchema = new Schema({
         type: mongoose.Schema.ObjectId,
         ref: 'Question',
         required: 'You must supply a question'
-    }
+    },
 });
 
 function autopopulate(next) {

@@ -45,8 +45,13 @@
     text-align: center;
 }
 
+.questions {   
+    width: 50%;
+    margin: 0 auto;
+}
+
 .question {
-    width: 40%;
+    width: 100%;
     margin: 0 auto;
     margin-top: 25px;
     border-radius: 10px;
@@ -55,7 +60,7 @@
     background: rgba(255, 255, 255, 0.59);
 }
 .question:hover {
-    width: 35%;
+    width: 90%;
     -webkit-transition: 2s; /* For Safari 3.1 to 6.0 */
     transition: 2s;
 }
@@ -123,6 +128,8 @@ h2 {
 }
 
 .credits{
+    margin-top: 15px;
+    margin-bottom: 15px;
     display: flex;
     justify-content:center;
     align-items: flex-end;

@@ -8,7 +8,6 @@ const chatController=require('../controllers/chatController')
 const messageController=require('../controllers/messageController')
 
 
-
 router.get('/register', function (req,res){
     res.render('register', {title:'Register', styleFile:'main.css'})
 })
@@ -30,7 +29,7 @@ router.post('/login', userController.login)
 router.get('/signout', userController.signout)
 
 router.get('/account', userController.checkSession, function(req,res){
-    res.render('account', {title:'User account'})
+    res.render('account', {title:'Account | ', styleFile:'main.css'})
 })
 
 router.get('/', questionController.getQuestions, function(req, res){
@@ -53,6 +52,6 @@ router.get('/chat', userController.checkSession, chatController.createChat, chat
     res.render('chat', {title:'Chat', styleFile:'main.css'})
 });
 
-router.post('/create-message/:chat', messageController.createMessage);
+router.post('/create-message/:chat', messageController.createMessage );
 
 module.exports = router;

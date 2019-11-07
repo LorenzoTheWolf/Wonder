@@ -22,6 +22,10 @@ const userSchema = new Schema({
     friends:{
         type: [mongoose.Schema.ObjectId],
         ref: 'User'
+    },
+    questions:{
+        type:String,
+        trim:true,
     }
 });
 

@@ -13,7 +13,7 @@ const ChatSchema = new Schema({
 })
 
 function autopopulate(next) {
-    this.populate('senders');
+    //this.populate('senders');
     this.populate('messages');
     next();
 }

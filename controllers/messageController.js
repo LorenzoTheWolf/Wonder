@@ -12,14 +12,16 @@ exports.createMessage = function(req,res){
     const message= new Message({
         text:messageData.text,
         chat: chat,
-        sender: req.session.user._id,
+        //sender: req.session.user._id,
     })
+    
     message.save().then(function(store){
-        if (chat){
+
+        if(store){
             res.redirect('back');
-            console.log(message.text)   
+            console.log(message.text)
         }
-    })
+    });
 }         
 
 console.log('Hi')
