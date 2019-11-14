@@ -132,9 +132,12 @@ h2 {
     margin-bottom: 15px;
     display: flex;
     justify-content:center;
+    margin:0 auto;
     align-items: flex-end;
     text-decoration: none;
     color: #ff9f43;
+    width: 3%;
+    text-align: center;
 }
 .credits:hover {
     color:#d89126;

@@ -29,7 +29,7 @@ router.post('/login', userController.login)
 router.get('/signout', userController.signout)
 
 router.get('/account', userController.checkSession, function(req,res){
-    res.render('account', {title:'Account | ', styleFile:'main.css'})
+    res.render('account', {title:'Account | Wonder', styleFile:'main.css'})
 })
 
 router.get('/', questionController.getQuestions, function(req, res){
