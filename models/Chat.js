@@ -2,18 +2,18 @@ const mongoose = require('mongoose');
 const Schema = mongoose.Schema;
 
 const ChatSchema = new Schema({
-    users:[{
+    users:{
         type:mongoose.Schema.ObjectId,
         ref: 'User'
-    }],
-    messages:[{
+    },
+    messages:{
         type:mongoose.Schema.ObjectId,
         ref: 'Message'        
-    }],
+    },
 })
 
 function autopopulate(next) {
-    //this.populate('senders');
+    this.populate('senders');
     this.populate('messages');
     next();
 }

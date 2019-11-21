@@ -52,6 +52,8 @@ router.get('/chat', userController.checkSession, chatController.createChat, chat
     res.render('chat', {title:'Chat', styleFile:'main.css'})
 });
 
-router.post('/create-message/:chat', messageController.createMessage );
+router.post('/create-message/:chat', messageController.createMessage);
+
+router.get('/question', userController.getQuestionAuthor)
 
 module.exports = router;

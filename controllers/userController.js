@@ -1,6 +1,8 @@
 const mongoose = require('mongoose');
 const bcrypt = require('bcrypt');
 const User = mongoose.model('User');
+const Question= mongoose.model('Question')
+
 
 exports.validateRegister = function(req, res, next) {
     const userData = req.body;
@@ -83,3 +85,11 @@ exports.login = function(req, res) {
         }
     });
 };
+
+exports.getQuestionAuthor=function(req,res,next){
+    console.log('Getting questions')
+    Author.find({Questions}).then(function(questions){
+    console.log(questions);
+    res.locals.questions = questions;
+    next()})
+}

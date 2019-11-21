@@ -1,7 +1,9 @@
 extend layout
 
 block content
-    if questions
+    h1 #{user.username}
+    h3 #{user.email}
+    if user.questions
         .questions
             each question in questions
                 a.link(href=`/question/${question.slug}`)

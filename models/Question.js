@@ -7,10 +7,10 @@ const questionSchema = new Schema({
         trim:true,
         required:'You must type a question',
     },
-    /*answer:{
+    answer:{
         type:String,
         trim: true,
-    },*/
+    },
     slug:{
         type:String, 
         unique:true,
